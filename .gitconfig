@@ -1,0 +1,40 @@
+[core]
+	excludesfile = /home/kapone/.gitignore_global
+[user]
+	name = Tomasz Kapłon
+	email = tomasz.kaplon@monterail.com
+[push]
+	default = current
+[alias]
+	st = status
+	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) | %(authorname) | %(refname:short)'
+	recommit = !bash -c 'git commit -t <(git log -1 --pretty=%B)'
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = false
+
+[difftool "kdiff3"]
+    path = kdiff3
+    trustExitCode = false
+[difftool]
+    prompt = false
+[diff]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    path = kdiff3
+    trustExitCode = false
+[mergetool]
+	keepBackup = false
+[merge]
+    tool = kdiff3
+
+[credential]
+	helper = /usr/lib/git/git-credential-libsecret
+[lfs]
+	fetchexclude = images/
