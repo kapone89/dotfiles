@@ -1,0 +1,20 @@
+remove Lock = Caps_Lock
+remove Control = Control_R
+remove Mod3 = Menu
+remove Mod5 = ISO_Level3_Shift
+remove Mod3 = Escape
+remove Mod3 = Print
+
+keysym Caps_Lock = Escape
+keysym Escape = Caps_Lock
+keysym ISO_Level3_Shift = Control_R
+keysym Menu = ISO_Level3_Shift
+keysym Control_R = ISO_Level3_Shift
+keysym Print = ISO_Level3_Shift
+
+add Lock = Caps_Lock
+add Control = Control_R
+add Mod3 = Menu
+add Mod5 = ISO_Level3_Shift
+add Mod3 = Escape
+add Mod3 = Print

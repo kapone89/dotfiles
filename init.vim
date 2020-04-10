@@ -68,7 +68,8 @@ nnoremap <C-p> :Files<Cr>
 nnoremap <leader>t :Tags<Cr>
 nnoremap <C-h> :History<Cr>
 nnoremap <leader>g :Rg<Space>
-nnoremap <leader>d "_d
+noremap <leader>d "_d
+noremap <leader>s :update<CR>
 
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:ycm_collect_identifiers_from_tags_files=1
