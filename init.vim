@@ -5,10 +5,12 @@ Plug 'itchyny/lightline.vim'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-unimpaired'
 " Plug 'preservim/nerdtree'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ycm-core/YouCompleteMe'
@@ -18,10 +20,10 @@ Plug 'honza/vim-snippets'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'vifm/vifm.vim'
 Plug 'farmergreg/vim-lastplace'
-Plug 'craigemery/vim-autotag'
+" Plug 'craigemery/vim-autotag'
 
 Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-bundler'
 
 call plug#end()
 
@@ -72,4 +74,13 @@ noremap <leader>d "_d
 noremap <leader>s :update<CR>
 
 let g:UltiSnipsExpandTrigger="<c-l>"
-let g:ycm_collect_identifiers_from_tags_files=1
+" let g:ycm_collect_identifiers_from_tags_files=1
+
+let g:ycm_language_server = [
+  \   {
+  \     'name': 'ruby',
+  \     'cmdline': [ 'docker-compose', 'exec -it sec-hub-consumer-api_web_1 solargraph stdio' ],
+  \     'filetypes': [ 'ruby' ],
+  \   },
+  \ ]
+
