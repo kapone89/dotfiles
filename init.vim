@@ -69,14 +69,20 @@ nnoremap <C-k> :History<Cr>
 nnoremap <leader>g :Rg<Space>
 noremap <leader>d "_d
 nnoremap <leader>s :update<CR>
-nnoremap <leader>a :e #0<CR>
+nnoremap <leader>q :q<CR>
+" nnoremap <leader>a :e #0<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>c :Commands<CR>
 
 let g:no_cecutil_maps = 1
 
 let g:coc_global_extensions = [
-  \ 'coc-snippets'
+  \ 'coc-snippets',
+  \ 'coc-solargraph',
+  \ 'coc-json',
+  \ 'coc-yaml',
+  \ 'coc-spell-checker',
+  \ 'coc-actions',
   \ ]
 
 inoremap <silent><expr> <TAB>
@@ -96,11 +102,10 @@ imap <C-l> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
-" let g:ycm_language_server = [
-"   \   {
-"   \     'name': 'ruby',
-"   \     'cmdline': [ 'solargraph', 'stdio' ],
-"   \     'filetypes': [ 'ruby' ],
-"   \   },
-"   \ ]
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 

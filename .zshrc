@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 # export PAGER='nvim -R -'
 
+# eval "$(dip console)"
+eval "$(direnv hook zsh)"
+

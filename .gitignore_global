@@ -27,4 +27,5 @@ tags
 docker-compose.override.yml
 dip.yml
 docker-proxy
+.envrc
 

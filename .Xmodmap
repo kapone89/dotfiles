@@ -1,20 +1,34 @@
 remove Lock = Caps_Lock
 remove Control = Control_R
-remove Mod3 = Menu
+! remove Mod3 = Menu
 remove Mod5 = ISO_Level3_Shift
 remove Mod3 = Escape
-remove Mod3 = Print
+! remove Mod3 = Print
 
-keysym Caps_Lock = Escape
-keysym Escape = Caps_Lock
-keysym ISO_Level3_Shift = Control_R
-keysym Menu = ISO_Level3_Shift
-keysym Control_R = ISO_Level3_Shift
-keysym Print = ISO_Level3_Shift
+! keysym Caps_Lock = Escape
+! keysym Escape = Caps_Lock
+! keysym ISO_Level3_Shift = Control_R
+! keysym Menu = ISO_Level3_Shift
+! keysym Control_R = ISO_Level3_Shift
+! keysym Print = ISO_Level3_Shift
+
+! Escape -> Caps_Lock
+keycode 9 = Caps_Lock
+
+! Caps_Lock -> Escape
+keycode 66 = Escape
+
+! AltGr -> Control_R
+keycode 108 = Control_R
+
+! Menu, PrtSc, Control_R -> AltGr
+keycode 135 = ISO_Level3_Shift
+keycode 107 = ISO_Level3_Shift
+keycode 105 = ISO_Level3_Shift
 
 add Lock = Caps_Lock
 add Control = Control_R
-add Mod3 = Menu
+! add Mod3 = Menu
 add Mod5 = ISO_Level3_Shift
 add Mod3 = Escape
-add Mod3 = Print
+! add Mod3 = Print
