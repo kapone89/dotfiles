@@ -18,6 +18,7 @@ Plug 'vifm/vifm.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+" Plug 'haya14busa/vim-asterisk'
 
 Plug 'nelstrom/vim-textobj-rubyblock'
 
@@ -63,16 +64,18 @@ set copyindent
 let mapleader=" "
 nnoremap <leader>f :Vifm<CR>
 nnoremap <C-j> :Files<Cr>
-" nnoremap <leader>o :Files<Cr>
-" nnoremap <leader>t :History<Cr>
 nnoremap <C-k> :History<Cr>
-nnoremap <leader>g :Rg<Space>
+nnoremap <leader>/ :Rg<Space>
 noremap <leader>d "_d
 nnoremap <leader>s :update<CR>
-nnoremap <leader>q :q<CR>
+" nnoremap <leader>q :q<CR>
 " nnoremap <leader>a :e #0<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>c :Commands<CR>
+nnoremap <leader>q @q
+" map <leader>ciw <Plug>(asterisk-z*)cgn
+nnoremap <leader>ciw *Ncgn
+nnoremap <leader>h :noh<CR>
 
 let g:no_cecutil_maps = 1
 
