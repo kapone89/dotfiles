@@ -19,6 +19,7 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 " Plug 'haya14busa/vim-asterisk'
+Plug 'joshdick/onedark.vim'
 
 Plug 'nelstrom/vim-textobj-rubyblock'
 
@@ -59,23 +60,29 @@ set copyindent
 " set completeopt=menu,menuone,preview,noselect,noinsert
 
 " Bindings
-" map <C-n> :NERDTreeToggle<CR>
-" let g:NERDTreeQuitOnOpen = 1
 let mapleader=" "
 nnoremap <leader>f :Vifm<CR>
 nnoremap <C-j> :Files<Cr>
 nnoremap <C-k> :History<Cr>
 nnoremap <leader>/ :Rg<Space>
+vmap <silent> <leader>/ y:Rg<space><C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 noremap <leader>d "_d
 nnoremap <leader>s :update<CR>
 " nnoremap <leader>q :q<CR>
 " nnoremap <leader>a :e #0<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>c :Commands<CR>
-nnoremap <leader>q @q
 " map <leader>ciw <Plug>(asterisk-z*)cgn
 nnoremap <leader>ciw *Ncgn
 nnoremap <leader>h :noh<CR>
+
+" Macros
+nnoremap <leader>q @q
+let @r = '0df/t#d$' " clean rspec output
+
+" Marks
+nnoremap mm mM
+nnoremap <leader>m 'M'.$
 
 let g:no_cecutil_maps = 1
 
