@@ -1,60 +1,59 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
-Plug 'w0rp/ale'
-Plug 'maximbaz/lightline-ale'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'brooth/far.vim'
-Plug 'powerman/vim-plugin-AnsiEsc'
-Plug 'vifm/vifm.vim'
 Plug 'farmergreg/vim-lastplace'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
-" Plug 'haya14busa/vim-asterisk'
+Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vifm/vifm.vim'
+Plug 'w0rp/ale'
 
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
+" Plug 'haya14busa/vim-asterisk'
 call plug#end()
 
 
-" set background=light
+" set hidden
+highlight ColorColumn ctermbg=8
+set clipboard=unnamedplus
+set colorcolumn=80
+set cursorline
+set iskeyword+=-
 set list
 set number
-set ruler
-set cursorline
-set colorcolumn=80
-highlight ColorColumn ctermbg=8
 set relativenumber
+set ruler
 set scrolloff=3
 set showbreak=↪
-set wrap linebreak
-set iskeyword+=-
-" set hidden
 set undofile
-set clipboard=unnamedplus
+set wrap linebreak
 
 " Search
+" set gdefault
 set hlsearch
 set ignorecase
-set smartcase
-" set gdefault
 set inccommand=split
+set smartcase
 
 " Indentation
-set tabstop=2
+set copyindent
+set expandtab
 set shiftwidth=2
 set softtabstop=2
-set expandtab
-set copyindent
+set tabstop=2
 
 " Completion
 " set completeopt=menu,menuone,preview,noselect,noinsert
@@ -87,12 +86,12 @@ nnoremap <leader>m 'M'.$
 let g:no_cecutil_maps = 1
 
 let g:coc_global_extensions = [
+  \ 'coc-actions',
+  \ 'coc-json',
   \ 'coc-snippets',
   \ 'coc-solargraph',
-  \ 'coc-json',
-  \ 'coc-yaml',
   \ 'coc-spell-checker',
-  \ 'coc-actions',
+  \ 'coc-yaml',
   \ ]
 
 inoremap <silent><expr> <TAB>
