@@ -17,6 +17,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vifm/vifm.vim'
 Plug 'w0rp/ale'
+Plug 'wellle/targets.vim'
+Plug 'yuttie/comfortable-motion.vim'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
