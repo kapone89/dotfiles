@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'brooth/far.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'honza/vim-snippets'
@@ -13,6 +14,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vifm/vifm.vim'
@@ -32,7 +34,7 @@ call plug#end()
 highlight ColorColumn ctermbg=8
 set clipboard=unnamedplus
 set colorcolumn=80
-set cursorline
+" set cursorline
 set iskeyword+=-
 set list
 set number
@@ -83,7 +85,12 @@ let @r = '0df/t#d$' " clean rspec output
 
 " Marks
 nnoremap mm mM
-nnoremap <leader>m 'M'.$
+" nnoremap <leader>m 'M'.$
+nnoremap <leader>m 'M
+
+" temp
+nnoremap h :echoe "Use w e b"<CR>
+nnoremap l :echoe "Use w e b"<CR>
 
 let g:no_cecutil_maps = 1
 
