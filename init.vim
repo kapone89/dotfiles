@@ -21,10 +21,14 @@ Plug 'vifm/vifm.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'gioele/vim-autoswap'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'nelstrom/vim-textobj-rubyblock'
+" Plug 'nelstrom/vim-textobj-rubyblock'
+" Plug 'rhysd/vim-textobj-ruby'
+Plug 'tek/vim-textobj-ruby'
 
 " Plug 'haya14busa/vim-asterisk'
 call plug#end()
