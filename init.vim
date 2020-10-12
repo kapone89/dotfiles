@@ -21,13 +21,14 @@ Plug 'vifm/vifm.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'gioele/vim-autoswap'
+Plug 'posva/vim-vue'
+Plug 'tpope/vim-rsi'
+Plug 'bkad/CamelCaseMotion'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-" Plug 'nelstrom/vim-textobj-rubyblock'
-" Plug 'rhysd/vim-textobj-ruby'
 Plug 'tek/vim-textobj-ruby'
 
 " Plug 'haya14busa/vim-asterisk'
@@ -42,12 +43,13 @@ set colorcolumn=80
 set iskeyword+=-
 set list
 set number
-set relativenumber
+" set relativenumber
 set ruler
 set scrolloff=3
 set showbreak=↪
 set undofile
 set wrap linebreak
+set lazyredraw            " improve scrolling performance when navigating through large results
 
 " Search
 " set gdefault
@@ -131,3 +133,10 @@ endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
+" Far
+let g:far#source = "rgnvim"
+let g:far#window_layout = "current"
+let g:far#default_file_mask = "**/*.*"
+
+" CamelCaseMotion.vim
+let g:camelcasemotion_key = '<leader>'
