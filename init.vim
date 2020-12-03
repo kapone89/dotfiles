@@ -26,6 +26,10 @@ Plug 'gioele/vim-autoswap'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-rsi'
 Plug 'bkad/CamelCaseMotion'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-fugitive'
+Plug 'kassio/neoterm'
+Plug 'svermeulen/vim-subversive'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -73,7 +77,8 @@ let mapleader=" "
 nnoremap <leader>f :Vifm<CR>
 nnoremap <C-j> :Files<Cr>
 nnoremap <C-k> :History<Cr>
-nnoremap <leader>/ :Rg<Space>
+" nnoremap <leader>/ :Rg<Space>
+nnoremap <leader>/ :CocSearch -F<Space>
 vmap <silent> <leader>/ y:Rg<space><C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 noremap <leader>d "_d
 nnoremap <leader>s :update<CR>
@@ -140,3 +145,10 @@ let g:far#default_file_mask = "**/*.*"
 
 " CamelCaseMotion.vim
 let g:camelcasemotion_key = '<leader>'
+
+" vim-subversive
+nmap gr <plug>(SubversiveSubstitute)
+nmap grr <plug>(SubversiveSubstituteLine)
+
+" terminal
+" :tnoremap <Esc> <C-\><C-n>
