@@ -111,6 +111,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-spell-checker',
+  \ 'coc-tabnine',
   \ 'coc-yaml',
   \ ]
 
