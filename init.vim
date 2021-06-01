@@ -30,6 +30,10 @@ Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-fugitive'
 Plug 'kassio/neoterm'
 Plug 'svermeulen/vim-subversive'
+Plug 'junegunn/vim-peekaboo'
+Plug 'leafgarland/typescript-vim'
+Plug 'slim-template/vim-slim'
+Plug 'elixir-editors/vim-elixir'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -41,6 +45,8 @@ call plug#end()
 
 " set hidden
 highlight ColorColumn ctermbg=8
+highlight MatchParen cterm=bold ctermbg=none ctermfg=none
+highlight Search cterm=underline ctermbg=none ctermfg=none
 set clipboard=unnamedplus
 set colorcolumn=80
 " set cursorline
@@ -112,6 +118,7 @@ let g:coc_global_extensions = [
   \ 'coc-solargraph',
   \ 'coc-spell-checker',
   \ 'coc-yaml',
+  \ 'coc-tsserver',
   \ ]
 " \ 'coc-tabnine',
 
