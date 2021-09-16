@@ -46,7 +46,7 @@ call plug#end()
 " set hidden
 highlight ColorColumn ctermbg=8
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
-highlight Search cterm=underline ctermbg=none ctermfg=none
+highlight Search cterm=underline,bold ctermbg=none ctermfg=none
 set clipboard=unnamedplus
 set colorcolumn=80
 " set cursorline
