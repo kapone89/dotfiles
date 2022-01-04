@@ -34,6 +34,9 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'leafgarland/typescript-vim'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'github/copilot.vim'
+Plug 'luochen1990/rainbow'
+Plug 'mkotha/conflict3'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -46,7 +49,7 @@ call plug#end()
 " set hidden
 highlight ColorColumn ctermbg=8
 highlight MatchParen cterm=bold ctermbg=none ctermfg=none
-highlight Search cterm=underline,bold ctermbg=none ctermfg=none
+highlight Search cterm=underline,bold ctermbg=Black ctermfg=none
 set clipboard=unnamedplus
 set colorcolumn=80
 " set cursorline
@@ -119,8 +122,8 @@ let g:coc_global_extensions = [
   \ 'coc-spell-checker',
   \ 'coc-yaml',
   \ 'coc-tsserver',
+  \ 'coc-tabnine',
   \ ]
-" \ 'coc-tabnine',
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -157,6 +160,9 @@ let g:camelcasemotion_key = '<leader>'
 " vim-subversive
 nmap gr <plug>(SubversiveSubstitute)
 nmap grr <plug>(SubversiveSubstituteLine)
+
+" rainbow pharentesis
+let g:rainbow_active = 1
 
 " terminal
 " :tnoremap <Esc> <C-\><C-n>
