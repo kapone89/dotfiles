@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+params = ARGV.dup
+
+task = params.shift
+task_no = task.split('/').last
+
+branch = task + '-' + params.join('-').capitalize
+commit = "[#{task_no}] #{params.join(' ')}"
+
+return unless system "git checkout -b #{branch}"
+return unless system "git commit -m '#{commit}'"
+return unless system 'git push -u'
+return unless system "gh pr create --title '#{commit}' --body '' --assignee @me"
