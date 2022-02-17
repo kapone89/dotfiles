@@ -33,8 +33,13 @@
 	keepBackup = false
 [merge]
     tool = kdiff3
+	conflictstyle = diff3
 
 [credential]
-	helper = /usr/lib/git/git-credential-libsecret
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [lfs]
 	fetchexclude = images/
+[gui]
+	recentrepo = /home/kapone/work/systems-engineering/sec-hub-consumer-api
+[pull]
+	rebase = false

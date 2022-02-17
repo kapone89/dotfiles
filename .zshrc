@@ -100,15 +100,17 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 export EDITOR='nvim'
 # export PAGER='nvim -R -'
-export LC_ALL=C.utf-8
+export LC_ALL=en_US.utf-8
 
 # eval "$(dip console)"
 eval "$(direnv hook zsh)"
 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-if [ -e /home/kapone/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kapone/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# if [ -e /home/kapone/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kapone/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+unalias grv
