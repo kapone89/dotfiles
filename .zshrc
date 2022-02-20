@@ -110,5 +110,6 @@ eval "$(direnv hook zsh)"
 export EDITOR='nvim'
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 unalias grv
