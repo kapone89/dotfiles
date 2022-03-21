@@ -1,5 +1,5 @@
 [core]
-  excludesfile = /home/kapone/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [user]
   name = Tomasz Kapłon
   email = tomasz.kaplon@monterail.com
@@ -39,7 +39,5 @@
 #   helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [lfs]
   fetchexclude = images/
-[gui]
-  recentrepo = /home/kapone/work/systems-engineering/sec-hub-consumer-api
 [pull]
   rebase = false
