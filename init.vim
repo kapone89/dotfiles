@@ -1,16 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'brooth/far.vim'
+" Plug 'brooth/far.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'maximbaz/lightline-ale'
+" Plug 'maximbaz/lightline-ale' " lightline indicates only. not used
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'powerman/vim-plugin-AnsiEsc'
+" Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
@@ -18,7 +18,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vifm/vifm.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
@@ -28,7 +28,7 @@ Plug 'tpope/vim-rsi'
 Plug 'bkad/CamelCaseMotion'
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-fugitive'
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 Plug 'svermeulen/vim-subversive'
 Plug 'junegunn/vim-peekaboo'
 Plug 'leafgarland/typescript-vim'
@@ -37,6 +37,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'github/copilot.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mkotha/conflict3'
+Plug 'dyng/ctrlsf.vim'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -87,8 +88,8 @@ nnoremap <leader>f :Vifm<CR>
 nnoremap <C-j> :Files<Cr>
 nnoremap <C-k> :History<Cr>
 " nnoremap <leader>/ :Rg<Space>
-nnoremap <leader>/ :CocSearch -F<Space>
-vmap <silent> <leader>/ y:Rg<space><C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+" nnoremap <leader>/ :CocSearch -F<Space>
+" vmap <silent> <leader>/ y:Rg<space><C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 noremap <leader>d "_d
 nnoremap <leader>s :update<CR>
 " nnoremap <leader>q :q<CR>
@@ -111,6 +112,8 @@ nnoremap <leader>m 'M
 " temp
 nnoremap h :echoe "Use w e b"<CR>
 nnoremap l :echoe "Use w e b"<CR>
+:command NoMoreWQ :echoe "Use ZZ"
+:cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'NoMoreWQ' : 'wq')<CR>
 
 let g:no_cecutil_maps = 1
 
@@ -138,7 +141,7 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-l> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
@@ -164,5 +167,15 @@ nmap grr <plug>(SubversiveSubstituteLine)
 " rainbow pharentesis
 let g:rainbow_active = 1
 
+" ctrlsf.vim
+nmap <leader>/ <Plug>CtrlSFPrompt
+vmap <leader>/ <Plug>CtrlSFVwordPath
+nmap <leader>k :CtrlSFToggle<CR>
+" nmap <leader>j :CtrlSFOpen <CR> :CtrlSF<Space>
+let g:ctrlsf_auto_preview = 1
+let g:ctrlsf_auto_focus = { "at": "start" }
+
 " terminal
 " :tnoremap <Esc> <C-\><C-n>
+
+" let g:ale_virtualtext_cursor = 1
