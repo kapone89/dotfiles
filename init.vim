@@ -4,6 +4,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'brooth/far.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

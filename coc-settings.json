@@ -1,7 +1,7 @@
 {
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.virtualTextPrefix": ">> ",
+  "diagnostic.virtualTextPrefix": "▪ ",
   "diagnostic.messageTarget": "echo",
   "solargraph.diagnostics": true,
   "solargraph.promptDownload": false,
