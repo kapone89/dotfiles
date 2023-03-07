@@ -12,4 +12,4 @@ commit = "[#{task_no}] #{params.join(' ')}"
 return unless system "git checkout -b #{branch}"
 return unless system "git commit -m '#{commit}'"
 return unless system 'git push -u'
-return unless system "gh pr create --title '#{commit}' --body '' --assignee @me"
+return unless system "gh pr create --title '#{commit}' --assignee @me"
