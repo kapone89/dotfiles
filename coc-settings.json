@@ -3,6 +3,7 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "▪ ",
   "diagnostic.messageTarget": "echo",
+  "suggest.noselect": true,
   "solargraph.diagnostics": true,
   "solargraph.promptDownload": false,
   "solargraph.checkGemVersion": false
