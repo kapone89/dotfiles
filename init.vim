@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'brooth/far.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
@@ -137,18 +136,6 @@ let g:coc_global_extensions = [
 " disabled coc extensions
 " \ 'coc-tabnine',
 
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -175,11 +162,6 @@ endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
-" Far
-let g:far#source = "rgnvim"
-let g:far#window_layout = "current"
-let g:far#default_file_mask = "**/*.*"
-
 " CamelCaseMotion.vim
 let g:camelcasemotion_key = '<leader>'
 
@@ -198,7 +180,7 @@ nmap <leader>k :CtrlSFToggle<CR>
 let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_auto_focus = { "at": "start" }
 
-" terminal
-" :tnoremap <Esc> <C-\><C-n>
+" Copilot
+" imap <silent><script><expr> <C-Tab> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
 
-" let g:ale_virtualtext_cursor = 1
