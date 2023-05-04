@@ -38,6 +38,7 @@ Plug 'github/copilot.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mkotha/conflict3'
 Plug 'dyng/ctrlsf.vim'
+Plug 'MunifTanjim/nui.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -45,13 +46,15 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
+" CodeGPT
+Plug 'jackMort/ChatGPT.nvim'
+
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'tek/vim-textobj-ruby'
 
 " Plug 'haya14busa/vim-asterisk'
 call plug#end()
-
 
 " set hidden
 highlight ColorColumn ctermbg=8
@@ -132,10 +135,10 @@ let g:coc_global_extensions = [
   \ 'coc-spell-checker',
   \ 'coc-yaml',
   \ 'coc-tsserver',
+  \ 'coc-tabnine',
   \ ]
 
 " disabled coc extensions
-" \ 'coc-tabnine',
 
 " inoremap <silent><expr> <TAB>
 "       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -182,3 +185,5 @@ let g:ctrlsf_auto_focus = { "at": "start" }
 " imap <silent><script><expr> <C-Tab> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
 
+" CodeGPT
+:lua require('chatgpt').setup()
