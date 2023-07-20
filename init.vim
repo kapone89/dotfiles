@@ -168,3 +168,16 @@ let g:ctrlsf_auto_focus = { "at": "start" }
 
 " CodeGPT
 " :lua require('chatgpt').setup()
+
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+" diable mouse integration
+set mouse=
