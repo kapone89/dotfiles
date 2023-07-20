@@ -47,7 +47,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
 " CodeGPT
-Plug 'jackMort/ChatGPT.nvim'
+" Plug 'jackMort/ChatGPT.nvim'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -140,28 +140,9 @@ let g:coc_global_extensions = [
 
 " disabled coc extensions
 
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1) :
-"       \ CheckBackspace() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" function! CheckBackspace() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
 imap <C-l> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " CamelCaseMotion.vim
 let g:camelcasemotion_key = '<leader>'
@@ -186,4 +167,4 @@ let g:ctrlsf_auto_focus = { "at": "start" }
 " let g:copilot_no_tab_map = v:true
 
 " CodeGPT
-:lua require('chatgpt').setup()
+" :lua require('chatgpt').setup()
