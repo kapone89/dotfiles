@@ -38,12 +38,12 @@ Plug 'github/copilot.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mkotha/conflict3'
 Plug 'dyng/ctrlsf.vim'
-Plug 'MunifTanjim/nui.nvim'
+" Plug 'MunifTanjim/nui.nvim'
 
 " Telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
 " CodeGPT
@@ -58,8 +58,8 @@ call plug#end()
 
 " set hidden
 highlight ColorColumn ctermbg=8
-highlight MatchParen cterm=bold ctermbg=none ctermfg=none
-highlight Search cterm=underline,bold ctermbg=Black ctermfg=none
+highlight MatchParen cterm=bold ctermbg=darkgrey ctermfg=none
+highlight Search cterm=underline,bold ctermbg=darkgrey ctermfg=none
 set clipboard=unnamedplus
 set colorcolumn=80
 " set cursorline
@@ -172,7 +172,7 @@ let g:ctrlsf_auto_focus = { "at": "start" }
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ]
+      \             [ 'readonly', 'absolutepath', 'gitbranch', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
