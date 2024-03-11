@@ -109,7 +109,9 @@ eval "$(direnv hook zsh)"
 
 export EDITOR='nvim'
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 export PATH="$HOME/dotfiles/bin:$PATH"
 export TERM="xterm-256color"
 
