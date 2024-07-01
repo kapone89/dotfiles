@@ -34,7 +34,6 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'leafgarland/typescript-vim'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'github/copilot.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mkotha/conflict3'
 Plug 'dyng/ctrlsf.vim'
@@ -46,7 +45,9 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
-" CodeGPT
+" AI tools
+Plug 'github/copilot.vim'
+" Plug 'Exafunction/codeium.vim'
 " Plug 'jackMort/ChatGPT.nvim'
 
 Plug 'kana/vim-textobj-user'
@@ -169,13 +170,23 @@ let g:ctrlsf_auto_focus = { "at": "start" }
 " CodeGPT
 " :lua require('chatgpt').setup()
 
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'absolutepath', 'gitbranch', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'FugitiveHead',
+      \   'filename': 'LightlineFilename',
       \ },
       \ }
 

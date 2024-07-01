@@ -108,8 +108,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(direnv hook zsh)"
 
 export EDITOR='nvim'
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
+# export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby@3.2/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 export PATH="$HOME/dotfiles/bin:$PATH"
