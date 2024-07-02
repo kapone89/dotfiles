@@ -1,11 +1,17 @@
 call plug#begin('~/.config/nvim/plugged')
+" Common deps
+Plug 'nvim-lua/plenary.nvim'
+
+" Theme
+Plug 'itchyny/lightline.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'navarasu/onedark.nvim'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
-Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'maximbaz/lightline-ale' " lightline indicates only. not used
@@ -40,7 +46,6 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'MunifTanjim/nui.nvim'
 
 " Telescope
-" Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
@@ -192,3 +197,9 @@ let g:lightline = {
 
 " diable mouse integration
 set mouse=
+
+" Theme
+let g:onedark_config = {
+    \ 'style': 'warmer',
+\}
+colorscheme onedark
