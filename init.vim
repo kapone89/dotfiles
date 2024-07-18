@@ -8,22 +8,21 @@ Plug 'itchyny/lightline.vim'
 Plug 'navarasu/onedark.nvim'
 
 Plug 'airblade/vim-gitgutter'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'farmergreg/vim-lastplace'
+Plug 'AndrewRadev/splitjoin.vim' " gS, gJ to split/join lines
+Plug 'farmergreg/vim-lastplace' " reopen files at the last edit position
 Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'maximbaz/lightline-ale' " lightline indicates only. not used
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'powerman/vim-plugin-AnsiEsc'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vifm/vifm.vim'
+Plug 'tomtom/tcomment_vim' " gc{motion} to comment, gcc to toggle
+Plug 'tpope/vim-abolish' " cru, crs, etc. to change case
+" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise' " auto close Ruby blocks
+Plug 'tpope/vim-surround' " change surrounding quotes, brackets, etc.
+Plug 'tpope/vim-unimpaired' " add new lines using [SPAPE and ]SPACE
+Plug 'vifm/vifm.vim' " file manager
 " Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
@@ -44,9 +43,11 @@ Plug 'luochen1990/rainbow'
 Plug 'mkotha/conflict3'
 Plug 'dyng/ctrlsf.vim'
 " Plug 'MunifTanjim/nui.nvim'
+Plug 'stevearc/oil.nvim' " built-in file manager
+Plug 'rmagatti/auto-session' " auto save and restore sessions
 
 " Telescope
-" Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
@@ -54,6 +55,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'github/copilot.vim'
 " Plug 'Exafunction/codeium.vim'
 " Plug 'jackMort/ChatGPT.nvim'
+" Plug 'zbirenbaum/copilot.lua'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -168,10 +171,6 @@ nmap <leader>k :CtrlSFToggle<CR>
 let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_auto_focus = { "at": "start" }
 
-" Copilot
-" imap <silent><script><expr> <C-Tab> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
-
 " CodeGPT
 " :lua require('chatgpt').setup()
 
@@ -203,3 +202,13 @@ let g:onedark_config = {
     \ 'style': 'warmer',
 \}
 colorscheme onedark
+
+lua require("CopilotChat").setup { debug = true }
+
+" Oil file manager
+lua require("oil").setup()
+nmap - :Oil<CR>
+
+" Auto session
+lua require('auto-session').setup()
+nnoremap <leader>p :Telescope session-lens<CR>
