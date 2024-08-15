@@ -24,7 +24,6 @@ Plug 'tpope/vim-surround' " change surrounding quotes, brackets, etc.
 Plug 'tpope/vim-unimpaired' " add new lines using [SPAPE and ]SPACE
 Plug 'vifm/vifm.vim' " file manager
 " Plug 'w0rp/ale'
-Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'gioele/vim-autoswap'
@@ -44,23 +43,29 @@ Plug 'mkotha/conflict3'
 Plug 'dyng/ctrlsf.vim'
 " Plug 'MunifTanjim/nui.nvim'
 Plug 'stevearc/oil.nvim' " built-in file manager
-Plug 'rmagatti/auto-session' " auto save and restore sessions
+" Plug 'rmagatti/auto-session' " auto save and restore sessions
 
 " Telescope
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " require('telescope').load_extension('fzf')
 
 " AI tools
 Plug 'github/copilot.vim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+" Plug 'huggingface/llm.nvim'
 " Plug 'Exafunction/codeium.vim'
 " Plug 'jackMort/ChatGPT.nvim'
 " Plug 'zbirenbaum/copilot.lua'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+" Text objects
+Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'tek/vim-textobj-ruby'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Plug 'haya14busa/vim-asterisk'
 call plug#end()
@@ -210,5 +215,22 @@ lua require("oil").setup()
 nmap - :Oil<CR>
 
 " Auto session
-lua require('auto-session').setup()
-nnoremap <leader>p :Telescope session-lens<CR>
+" lua require('auto-session').setup()
+" nnoremap <leader>p :Telescope session-lens<CR>
+
+" Toggleterm
+lua require("toggleterm").setup()
+
+" lua << EOF
+" require("llm").setup({
+"   backend = "ollama",
+"   model = "codellama:7b",
+"   url = "http://localhost:11434",
+"   request_body = {
+"     options = {
+"       temperature = 0.2,
+"       top_p = 0.95,
+"     }
+"   }
+" })
+" EOF
