@@ -133,8 +133,8 @@ nnoremap mm mM
 nnoremap <leader>m 'M
 
 " temp
-nnoremap h :echoe "Use w e b"<CR>
-nnoremap l :echoe "Use w e b"<CR>
+" nnoremap h :echoe "Use w e b"<CR>
+" nnoremap l :echoe "Use w e b"<CR>
 :command NoMoreWQ :echoe "Use ZZ"
 :cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'NoMoreWQ' : 'wq')<CR>
 
@@ -157,6 +157,12 @@ let g:coc_global_extensions = [
 imap <C-l> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gR <Plug>(coc-references)
 
 " CamelCaseMotion.vim
 let g:camelcasemotion_key = '<leader>'
@@ -224,7 +230,7 @@ lua require("toggleterm").setup()
 " lua << EOF
 " require("llm").setup({
 "   backend = "ollama",
-"   model = "codellama:7b",
+"   model = "mistral:7b",
 "   url = "http://localhost:11434",
 "   request_body = {
 "     options = {
