@@ -22,7 +22,7 @@ Plug 'tpope/vim-abolish' " cru, crs, etc. to change case
 Plug 'tpope/vim-endwise' " auto close Ruby blocks
 Plug 'tpope/vim-surround' " change surrounding quotes, brackets, etc.
 Plug 'tpope/vim-unimpaired' " add new lines using [SPAPE and ]SPACE
-Plug 'vifm/vifm.vim' " file manager
+" Plug 'vifm/vifm.vim' " file manager
 " Plug 'w0rp/ale'
 Plug 'yuttie/comfortable-motion.vim'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
@@ -107,7 +107,8 @@ set tabstop=2
 
 " Bindings
 let mapleader=" "
-nnoremap <leader>f :Vifm<CR>
+" nnoremap <leader>f :Vifm<CR>
+nnoremap <leader>f :Oil<CR>
 nnoremap <C-j> :Files<Cr>
 nnoremap <C-k> :History<Cr>
 " nnoremap <leader>/ :Rg<Space>
