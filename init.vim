@@ -1,6 +1,12 @@
 call plug#begin('~/.config/nvim/plugged')
 " Common deps
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'stevearc/dressing.nvim'
+Plug 'MunifTanjim/nui.nvim'
+" Plug 'MeanderingProgrammer/render-markdown.nvim'
+" Plug 'nvim-tree/nvim-web-devicons'
+" Plug 'echasnovski/mini.icons'
 
 " Theme
 Plug 'itchyny/lightline.vim'
@@ -25,7 +31,6 @@ Plug 'tpope/vim-unimpaired' " add new lines using [SPAPE and ]SPACE
 " Plug 'vifm/vifm.vim' " file manager
 " Plug 'w0rp/ale'
 Plug 'yuttie/comfortable-motion.vim'
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'gioele/vim-autoswap'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-rsi'
@@ -52,11 +57,14 @@ Plug 'stevearc/oil.nvim' " built-in file manager
 
 " AI tools
 Plug 'github/copilot.vim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'tag': '*' }
 " Plug 'huggingface/llm.nvim'
 " Plug 'Exafunction/codeium.vim'
 " Plug 'jackMort/ChatGPT.nvim'
 " Plug 'zbirenbaum/copilot.lua'
+" Plug 'pasky/claude.vim'
+
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
@@ -215,7 +223,17 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 
-lua require("CopilotChat").setup { debug = true }
+" lua << EOF
+"   require("copilot").setup({
+"     suggestion = {
+"       auto_trigger = true,
+"       accept = "<Tab>",
+"     },
+"   })
+" EOF
+lua require("CopilotChat").setup { debug = true, model = 'claude-3.5-sonnet' }
+lua require('avante').setup({ provider = 'copilot' })
+
 
 " Oil file manager
 lua require("oil").setup()
@@ -231,7 +249,7 @@ lua require("toggleterm").setup()
 " lua << EOF
 " require("llm").setup({
 "   backend = "ollama",
-"   model = "mistral:7b",
+"   model = "qwen2.5-coder:1.5b",
 "   url = "http://localhost:11434",
 "   request_body = {
 "     options = {
@@ -241,3 +259,5 @@ lua require("toggleterm").setup()
 "   }
 " })
 " EOF
+
+" let g:claude_api_key = $CLAUDE_API_KEY

@@ -109,7 +109,8 @@ eval "$(direnv hook zsh)"
 
 export EDITOR='nvim'
 # export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+# export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 # export PATH="/opt/homebrew/opt/ruby@3.2/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
@@ -118,3 +119,6 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export TERM="xterm-256color"
 
 unalias grv
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kapone/.lmstudio/bin"
