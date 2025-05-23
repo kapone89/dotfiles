@@ -35,32 +35,23 @@ Plug 'gioele/vim-autoswap'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-rsi'
 Plug 'bkad/CamelCaseMotion'
-Plug 'sickill/vim-pasta'
+Plug 'sickill/vim-pasta' " auto indent pasted text
 Plug 'tpope/vim-fugitive'
 " Plug 'kassio/neoterm'
-Plug 'svermeulen/vim-subversive'
+Plug 'svermeulen/vim-subversive' " gr, grr to substitute
 Plug 'junegunn/vim-peekaboo'
 Plug 'leafgarland/typescript-vim'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'luochen1990/rainbow'
-Plug 'mkotha/conflict3'
-Plug 'dyng/ctrlsf.vim'
-" Plug 'MunifTanjim/nui.nvim'
+Plug 'luochen1990/rainbow' " rainbow parentheses
+Plug 'mkotha/conflict3' " 3-way merge conflict resolution
+Plug 'dyng/ctrlsf.vim' " CtrlSF search
 Plug 'stevearc/oil.nvim' " built-in file manager
-" Plug 'rmagatti/auto-session' " auto save and restore sessions
-
-" Telescope
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-" require('telescope').load_extension('fzf')
 
 " AI tools
 Plug 'github/copilot.vim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'tag': '*' }
-" Plug 'huggingface/llm.nvim'
 " Plug 'Exafunction/codeium.vim'
-" Plug 'jackMort/ChatGPT.nvim'
 " Plug 'zbirenbaum/copilot.lua'
 " Plug 'pasky/claude.vim'
 
@@ -191,9 +182,6 @@ nmap <leader>k :CtrlSFToggle<CR>
 let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_auto_focus = { "at": "start" }
 
-" CodeGPT
-" :lua require('chatgpt').setup()
-
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
@@ -223,41 +211,14 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 
-" lua << EOF
-"   require("copilot").setup({
-"     suggestion = {
-"       auto_trigger = true,
-"       accept = "<Tab>",
-"     },
-"   })
-" EOF
 lua require("CopilotChat").setup { debug = true, model = 'claude-3.5-sonnet' }
 lua require('avante').setup({ provider = 'copilot' })
-
 
 " Oil file manager
 lua require("oil").setup()
 nmap - :Oil<CR>
 
-" Auto session
-" lua require('auto-session').setup()
-" nnoremap <leader>p :Telescope session-lens<CR>
-
 " Toggleterm
 lua require("toggleterm").setup()
-
-" lua << EOF
-" require("llm").setup({
-"   backend = "ollama",
-"   model = "qwen2.5-coder:1.5b",
-"   url = "http://localhost:11434",
-"   request_body = {
-"     options = {
-"       temperature = 0.2,
-"       top_p = 0.95,
-"     }
-"   }
-" })
-" EOF
 
 " let g:claude_api_key = $CLAUDE_API_KEY
