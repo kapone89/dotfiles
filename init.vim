@@ -55,7 +55,7 @@ Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'tag': '*' }
 " Plug 'zbirenbaum/copilot.lua'
 " Plug 'pasky/claude.vim'
 
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+" Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
@@ -211,8 +211,19 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 
+" lua << EOF
+"   require("copilot").setup({})
+" EOF
+
 lua require("CopilotChat").setup { debug = true, model = 'claude-3.5-sonnet' }
-lua require('avante').setup({ provider = 'copilot' })
+" lua << EOF
+"   require('avante').setup({
+"     provider = 'copilot',
+"     copilot = {
+"       model = 'claude-3.7-sonnet',
+"     }
+"   })
+" EOF
 
 " Oil file manager
 lua require("oil").setup()
@@ -220,5 +231,3 @@ nmap - :Oil<CR>
 
 " Toggleterm
 lua require("toggleterm").setup()
-
-" let g:claude_api_key = $CLAUDE_API_KEY
