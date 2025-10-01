@@ -55,7 +55,7 @@ Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'tag': '*' }
 " Plug 'zbirenbaum/copilot.lua'
 " Plug 'pasky/claude.vim'
 
-" Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
@@ -216,14 +216,16 @@ colorscheme onedark
 " EOF
 
 lua require("CopilotChat").setup { debug = true, model = 'claude-3.5-sonnet' }
-" lua << EOF
-"   require('avante').setup({
-"     provider = 'copilot',
-"     copilot = {
-"       model = 'claude-3.7-sonnet',
-"     }
-"   })
-" EOF
+lua << EOF
+  require('avante').setup({
+    provider = 'copilot',
+    providers = {
+      copilot = {
+        model = 'gpt-4o',
+      }
+    }
+  })
+EOF
 
 " Oil file manager
 lua require("oil").setup()

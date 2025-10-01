@@ -29,3 +29,4 @@ dip.yml
 docker-proxy
 .envrc
 .cursor
+.claude
