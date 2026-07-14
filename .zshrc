@@ -116,9 +116,18 @@ export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bi
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export TERM="xterm-256color"
 
 unalias grv
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/kapone/.lmstudio/bin"
+
+# bun completions
+[ -s "/Users/kapone/.bun/_bun" ] && source "/Users/kapone/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

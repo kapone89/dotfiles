@@ -66,6 +66,9 @@ Plug 'kana/vim-textobj-entire'
 Plug 'tek/vim-textobj-ruby'
 Plug 'michaeljsmith/vim-indent-object'
 
+" Multiple cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 " Plug 'haya14busa/vim-asterisk'
 call plug#end()
 

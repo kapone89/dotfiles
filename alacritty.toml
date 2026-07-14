@@ -16,3 +16,8 @@ family = "Ubuntu Mono"
 [window]
 decorations = "none"
 startup_mode = "Maximized"
+
+[[keyboard.bindings]]
+key = "Backslash"
+mods = "Alt"
+chars = "\u001b\\"

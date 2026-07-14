@@ -25,8 +25,10 @@ de/*
 .solargraph.yml
 tags
 docker-compose.override.yml
-dip.yml
 docker-proxy
 .envrc
-.cursor
-.claude
+elixir-phoenix-api
+.playwright-mcp
+.cursor/rules
+
+.claude/settings.local.json
