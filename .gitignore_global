@@ -32,3 +32,4 @@ elixir-phoenix-api
 .cursor/rules
 
 .claude/settings.local.json
+.codegraph

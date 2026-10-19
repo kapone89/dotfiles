@@ -50,10 +50,6 @@ Plug 'stevearc/oil.nvim' " built-in file manager
 
 " AI tools
 Plug 'github/copilot.vim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'tag': '*' }
-" Plug 'Exafunction/codeium.vim'
-" Plug 'zbirenbaum/copilot.lua'
-" Plug 'pasky/claude.vim'
 
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
@@ -214,21 +210,8 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 
-" lua << EOF
-"   require("copilot").setup({})
-" EOF
-
-lua require("CopilotChat").setup { debug = true, model = 'claude-3.5-sonnet' }
-lua << EOF
-  require('avante').setup({
-    provider = 'copilot',
-    providers = {
-      copilot = {
-        model = 'gpt-4o',
-      }
-    }
-  })
-EOF
+" Disable copilot automatic autocomplete and trigger it using <M-\>
+let g:copilot_filetypes = { '*': v:false }
 
 " Oil file manager
 lua require("oil").setup()
