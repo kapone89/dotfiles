@@ -51,7 +51,7 @@ Plug 'stevearc/oil.nvim' " built-in file manager
 " AI tools
 Plug 'github/copilot.vim'
 
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+" Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
@@ -61,9 +61,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'tek/vim-textobj-ruby'
 Plug 'michaeljsmith/vim-indent-object'
-
-" Multiple cursors
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Plug 'haya14busa/vim-asterisk'
 call plug#end()
